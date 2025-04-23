@@ -22,23 +22,72 @@
             transition: all 0.2s ease;
         }
 
-        .calendar-day.has-match {
-            background-color: #CC0000;
-            color: white;
+        .result-win {
+            background-color: #dcfce7;
+            border-left: 4px solid #22c55e;
+        }
+
+        .result-loss {
+            background-color: #fee2e2;
+            border-left: 4px solid #ef4444;
+        }
+
+        .result-draw {
+            background-color: #f3f4f6;
+            border-left: 4px solid #9ca3af;
         }
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Header (Same as other pages) -->
+    <!-- Header -->
     <header class="bg-[#1B1B4B] text-white">
-        <!-- Header content (same as other pages) -->
+        <!-- Top Bar -->
+        <div class="bg-[#CC0000] py-2">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <div class="text-sm">
+                    Welcome to Our Club
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="text-sm hover:text-gray-200">Member Login</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Header -->
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="https://lynchypin.github.io/club-home-page/">
+                        <img src="https://placehold.co/150x60" alt="Club Logo" class="h-15">
+                    </a>
+                </div>
+                
+                <nav class="hidden md:flex gap-6">
+                    <a href="https://lynchypin.github.io/club-home-page/" class="club-nav-item py-2">Home</a>
+                    <a href="https://lynchypin.github.io/club-about-page/" class="club-nav-item py-2">About</a>
+                    <a href="https://lynchypin.github.io/club-teams-page/" class="club-nav-item py-2">Teams</a>
+                    <a href="https://lynchypin.github.io/club-fixtures-page/" class="club-nav-item py-2">Fixtures</a>
+                    <a href="https://lynchypin.github.io/club-news-page/" class="club-nav-item py-2">News</a>
+                    <a href="https://lynchypin.github.io/club-shop-page/" class="club-nav-item py-2">Shop</a>
+                    <a href="https://lynchypin.github.io/club-sponsors-page/" class="club-nav-item py-2">Sponsors</a>
+                    <a href="https://lynchypin.github.io/club-contact-page/" class="club-nav-item py-2">Contact</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </header>
 
     <!-- Page Title Section -->
     <div class="bg-[#1B1B4B] text-white py-12">
         <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold">Fixtures & Results</h1>
-            <nav class="mt-4 text-sm" aria-label="Breadcrumb">
+            <h1 class="text-4xl font-bold mb-4">Fixtures & Results</h1>
+            <nav class="text-sm" aria-label="Breadcrumb">
                 <ol class="list-none p-0 inline-flex">
                     <li class="flex items-center">
                         <a href="https://lynchypin.github.io/club-home-page/">Home</a>
@@ -52,212 +101,144 @@
         </div>
     </div>
 
-    <!-- Next Match Highlight -->
-    <section class="py-8">
+    <!-- Next Match Section -->
+    <section class="py-12">
         <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">Next Match</h2>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div class="bg-[#1B1B4B] text-white py-2 px-6">
-                    <h2 class="text-xl font-bold">Next Match</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 items-center p-8">
+                    <div class="text-center">
+                        <img src="https://placehold.co/120x120" alt="Home Team" class="mx-auto mb-4">
+                        <h3 class="text-xl font-bold">Our Club</h3>
+                    </div>
+                    <div class="text-center my-6 md:my-0">
+                        <div class="text-2xl font-bold mb-4">VS</div>
+                        <div class="bg-[#1B1B4B] text-white rounded-lg p-4">
+                            <div class="text-sm mb-2">County Championship</div>
+                            <div class="font-bold mb-2">Sunday, 28 April 2025</div>
+                            <div>15:00</div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/120x120" alt="Away Team" class="mx-auto mb-4">
+                        <h3 class="text-xl font-bold">St. Patrick's</h3>
+                    </div>
                 </div>
-                <div class="p-6">
-                    <div class="grid grid-cols-3 items-center text-center">
-                        <div>
-                            <img src="https://placehold.co/100x100" alt="Home Team" class="mx-auto mb-2">
-                            <h3 class="font-bold">Our Club</h3>
-                        </div>
-                        <div class="text-2xl font-bold">
-                            <div class="text-sm text-gray-500 mb-2">County Championship Final</div>
-                            <div>VS</div>
-                            <div class="text-sm text-gray-500 mt-2">Sept 30, 3:00 PM</div>
-                        </div>
-                        <div>
-                            <img src="https://placehold.co/100x100" alt="Away Team" class="mx-auto mb-2">
-                            <h3 class="font-bold">Rival Club</h3>
-                        </div>
-                    </div>
-                    <div class="text-center mt-6">
-                        <a href="#" class="bg-[#CC0000] text-white px-6 py-2 rounded-lg hover:bg-red-700">
-                            Get Tickets
-                        </a>
-                    </div>
+                <div class="bg-gray-50 p-4 text-center">
+                    <a href="#" class="inline-block bg-[#CC0000] text-white px-6 py-2 rounded-lg hover:bg-red-700">
+                        Get Tickets
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Upcoming Fixtures -->
-    <section class="py-8 bg-gray-100">
+    <section class="py-12 bg-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-8">Upcoming Fixtures</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Fixture Card -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden fixture-card">
-                    <div class="p-4">
-                        <div class="text-sm text-gray-500 mb-2">Oct 7, 2:30 PM</div>
-                        <div class="flex justify-between items-center mb-4">
+                <div class="bg-white rounded-lg shadow-md p-6 fixture-card">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm text-gray-600">County Championship</span>
+                        <span class="text-sm font-bold text-[#CC0000]">5 May 2025</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/40x40" alt="Team 1" class="mr-2">
                             <span class="font-bold">Our Club</span>
-                            <span class="text-sm">vs</span>
-                            <span class="font-bold">Away Team</span>
                         </div>
-                        <div class="text-sm text-gray-600">League Round 5</div>
-                        <div class="text-sm text-gray-600">Main Stadium</div>
+                        <span class="text-lg font-bold">VS</span>
+                        <div class="flex items-center">
+                            <span class="font-bold">St. Mary's</span>
+                            <img src="https://placehold.co/40x40" alt="Team 2" class="ml-2">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-sm text-gray-600">14:00 | Home Ground</span>
                     </div>
                 </div>
-                <!-- Add more fixture cards -->
+                <!-- More fixture cards... -->
             </div>
         </div>
     </section>
 
     <!-- Recent Results -->
-    <section class="py-8">
+    <section class="py-12">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-8">Recent Results</h2>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div class="overflow-x-auto">
-                    <table class="w-full">
-                        <thead class="bg-[#1B1B4B] text-white">
-                            <tr>
-                                <th class="px-6 py-3 text-left">Date</th>
-                                <th class="px-6 py-3 text-left">Competition</th>
-                                <th class="px-6 py-3 text-left">Home</th>
-                                <th class="px-6 py-3 text-left">Score</th>
-                                <th class="px-6 py-3 text-left">Away</th>
-                                <th class="px-6 py-3 text-left">Report</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr>
-                                <td class="px-6 py-4">Sept 23</td>
-                                <td class="px-6 py-4">Championship</td>
-                                <td class="px-6 py-4 font-bold">Our Club</td>
-                                <td class="px-6 py-4">2-15 : 1-12</td>
-                                <td class="px-6 py-4">Other Team</td>
-                                <td class="px-6 py-4">
-                                    <a href="#" class="text-[#CC0000] hover:underline">View</a>
-                                </td>
-                            </tr>
-                            <!-- Add more result rows -->
-                        </tbody>
-                    </table>
+            <div class="space-y-4">
+                <!-- Result Card - Win -->
+                <div class="bg-white rounded-lg shadow-md p-6 result-win">
+                    <div class="grid grid-cols-3 items-center">
+                        <div class="text-center">
+                            <div class="font-bold">Our Club</div>
+                            <div class="text-2xl font-bold text-[#1B1B4B]">2-15</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-sm text-gray-600 mb-2">21 April 2025</div>
+                            <div class="text-sm font-bold text-green-600">WIN</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-bold">St. John's</div>
+                            <div class="text-2xl font-bold text-[#1B1B4B]">1-12</div>
+                        </div>
+                    </div>
                 </div>
+                <!-- More result cards... -->
             </div>
         </div>
     </section>
 
     <!-- League Table -->
-    <section class="py-8 bg-gray-100">
+    <section class="py-12 bg-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-8">League Table</h2>
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div class="overflow-x-auto">
-                    <table class="w-full">
-                        <thead class="bg-[#1B1B4B] text-white">
-                            <tr>
-                                <th class="px-6 py-3 text-left">Pos</th>
-                                <th class="px-6 py-3 text-left">Team</th>
-                                <th class="px-6 py-3 text-center">P</th>
-                                <th class="px-6 py-3 text-center">W</th>
-                                <th class="px-6 py-3 text-center">D</th>
-                                <th class="px-6 py-3 text-center">L</th>
-                                <th class="px-6 py-3 text-center">PTS</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr class="bg-[#CC0000] bg-opacity-10">
-                                <td class="px-6 py-4">1</td>
-                                <td class="px-6 py-4 font-bold">Our Club</td>
-                                <td class="px-6 py-4 text-center">10</td>
-                                <td class="px-6 py-4 text-center">8</td>
-                                <td class="px-6 py-4 text-center">1</td>
-                                <td class="px-6 py-4 text-center">1</td>
-                                <td class="px-6 py-4 text-center font-bold">25</td>
-                            </tr>
-                            <!-- Add more table rows -->
-                        </tbody>
-                    </table>
-                </div>
+            <div class="bg-white rounded-lg shadow-md overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-[#1B1B4B] text-white">
+                        <tr>
+                            <th class="px-6 py-3 text-left">Position</th>
+                            <th class="px-6 py-3 text-left">Team</th>
+                            <th class="px-6 py-3 text-center">Played</th>
+                            <th class="px-6 py-3 text-center">Won</th>
+                            <th class="px-6 py-3 text-center">Drawn</th>
+                            <th class="px-6 py-3 text-center">Lost</th>
+                            <th class="px-6 py-3 text-center">Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="px-6 py-4">1</td>
+                            <td class="px-6 py-4 font-bold">Our Club</td>
+                            <td class="px-6 py-4 text-center">10</td>
+                            <td class="px-6 py-4 text-center">8</td>
+                            <td class="px-6 py-4 text-center">1</td>
+                            <td class="px-6 py-4 text-center">1</td>
+                            <td class="px-6 py-4 text-center font-bold">25</td>
+                        </tr>
+                        <!-- More table rows... -->
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <!-- Season Calendar -->
-    <section class="py-8">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8">Season Calendar</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Calendar Widget -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <div class="grid grid-cols-7 gap-2">
-                        <!-- Calendar header -->
-                        <div class="text-center font-bold">Mon</div>
-                        <div class="text-center font-bold">Tue</div>
-                        <div class="text-center font-bold">Wed</div>
-                        <div class="text-center font-bold">Thu</div>
-                        <div class="text-center font-bold">Fri</div>
-                        <div class="text-center font-bold">Sat</div>
-                        <div class="text-center font-bold">Sun</div>
-                        
-                        <!-- Calendar days -->
-                        <!-- Add calendar days dynamically with JavaScript -->
-                    </div>
-                </div>
-                
-                <!-- Upcoming Events -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-bold mb-4">Key Dates</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-center">
-                            <span class="w-3 h-3 bg-[#CC0000] rounded-full mr-3"></span>
-                            <div>
-                                <p class="font-semibold">County Championship Final</p>
-                                <p class="text-sm text-gray-600">September 30, 2025</p>
-                            </div>
-                        </li>
-                        <!-- Add more key dates -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ticket Information -->
-    <section class="py-8 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8">Match Tickets</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Ticket Option -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-bold mb-4">Single Match</h3>
-                    <p class="text-gray-600 mb-4">Access to one championship match</p>
-                    <p class="text-2xl font-bold mb-4">€15</p>
-                    <ul class="text-sm text-gray-600 mb-6">
-                        <li class="flex items-center mb-2">
-                            <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
-                            </svg>
-                            General admission
-                        </li>
-                        <!-- Add more features -->
-                    </ul>
-                    <button class="w-full bg-[#1B1B4B] text-white py-2 rounded-lg hover:bg-opacity-90">
-                        Buy Now
-                    </button>
-                </div>
-                <!-- Add more ticket options -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer (Same as other pages) -->
+    <!-- Footer -->
     <footer class="bg-[#1B1B4B] text-white pt-12 pb-6">
-        <!-- Footer content -->
+        <!-- Footer content same as other pages -->
     </footer>
 
-    <!-- JavaScript for calendar functionality -->
+    <!-- JavaScript for mobile menu -->
     <script>
-        // Add calendar functionality here
         document.addEventListener('DOMContentLoaded', function() {
-            // Calendar initialization code would go here
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            const mobileMenu = document.querySelector('.md\\:flex');
+            
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
         });
     </script>
 </body>
